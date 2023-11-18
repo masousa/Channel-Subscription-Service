@@ -8,7 +8,7 @@ server:
 
 spring:
   application:
-    name: default-arquetype
+    name: subscription-service
   main:
     allow-bean-definition-overriding: true
 #Remove this feature to enable database connections
