@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  mysql:
+    image: postgres:10
+    container_name: postgres_service_subscription
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_PASSWORD: subscription
+      POSTGRES_USER: subscription
+      POSTGRES_DB: subscription
+    restart: always
+
+  # rabbit:
+  #   image: rabbitmq:3-management
+  #   container_name: rabbitmq_service_package
+
+  #   ports:
+  #     - 5672:5672 # (erlang) communication between the nodes and CLI tool
+  #     - 15672:15672 # communication with the web management API
+  #   environment:
+  #     - RABBITMQ_DEFAULT_USER=subscription
+  #     - RABBITMQ_DEFAULT_PASS=subscription
+  #   restart: always
