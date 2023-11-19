@@ -25,7 +25,7 @@ Antes de iniciar, certifique-se de ter as seguintes dependências instaladas:
 1. Criar um fork do repositorio:
 *obs:* É importante que você faça o "fork" do projeto e não um "clone", se estiver com dúvidas sobre fork [leia aqui](https://docs.github.com/pt/get-started/quickstart/fork-a-repo).
 
-![print fork](image.png)
+![image](https://github.com/Ar3secchim/Channel-Subscription-Service/assets/82913620/ba5f281e-2748-4baf-8ee6-5cfe16a94e29)
 
 O objetivo do Fork é criar uma cópia do repositório na sua conta do GitHub, permitindo que você trabalhe nele sem afetar o projeto principal. É importante lembrar que você nunca deve enviar Pull Requests diretamente para o repositório principal do projeto, pois isso não é permitido pelo sistema. Após o Fork, você terá um repositório com o seguinte nome: `seu_nome_de_usuario/Channel-Subscription-Service`.
 
