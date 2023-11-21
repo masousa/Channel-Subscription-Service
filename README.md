@@ -39,6 +39,7 @@ O objetivo do Fork é criar uma cópia do repositório na sua conta do GitHub, p
 ```
 
 3. Subir os container necessário:
+*obs:* tenha o docker instalado na sua maquina.
 
 ```bash
   docker-compose up
