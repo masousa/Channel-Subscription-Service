@@ -22,7 +22,7 @@ spring:
 # Enabling database connection
 datasource:
   url: jdbc:postgresql://localhost:<port>/<db>
-  username: subscription
+  username: root
   password: subscription
   continue-on-error: true
 jpa:
@@ -31,7 +31,7 @@ jpa:
   format-sql: true
   hibernate:
     ddl-auto: update
-  database-platform: org.hibernate.dialect.PostgreSQLDialect
+  database-platform: org.hibernate.dialect.mysql
   properties:
     hibernate:
       jdbc:
@@ -40,8 +40,11 @@ jpa:
 ## Enable liquidbase
 
 liquibase:
-  enabled: true
-  change-log: classpath:db/changelog/changelog-local.xml
+    url: jdbc:mysql://localhost:3306/subscription
+    user: root
+    password: subscription
+    changeLogFile: classpath:db/changelog/changelog-local.xml
+
 
 ## Enabling rabbitmq
 

@@ -2,11 +2,12 @@ version: '3.7'
 services:
   mysql:
     image: mysql
-    container_name: postgres_service_subscription
+    container_name: mysql_service_subscription
     ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: subscription
+      MYSQL_DATABASE: subscription
     restart: always
 
   # rabbit:
