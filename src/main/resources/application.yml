@@ -37,10 +37,9 @@ spring:
     enabled: true
     baseline-on-migrate: true
     url: jdbc:mysql://localhost:3306/subscription
-    username: root
     password: subscription
-    driver-class-name:  com.mysql.jdbc.Driver
     schemas: subscription
+    user: root
 
   rabbitmq:
     host: 127.0.0.1
@@ -58,6 +57,4 @@ config:
   technical-visit:
     url: http://localhost:9081
     queue:
-      out: shedule_technical_visit
-    
-
+      out: schedule_technical_visit
