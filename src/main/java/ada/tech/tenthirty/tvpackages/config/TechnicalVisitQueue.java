@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 @Configuration
 public class TechnicalVisitQueue {
-  @Value("${config.TechnicalVisit.queue.out}")
+  @Value("${config.technical-visit.queue.out}")
   private String queue;
 
   @Bean

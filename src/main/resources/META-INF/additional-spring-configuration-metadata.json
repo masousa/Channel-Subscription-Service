@@ -18,5 +18,15 @@
     "name": "spring.config.technicalVisit.queue.out",
     "type": "java.lang.String",
     "description": "A description for 'spring.config.technicalVisit.queue.out'"
+  },
+  {
+    "name": "config.technical-visit.url",
+    "type": "java.lang.String",
+    "description": "A description for 'config.technical-visit.url'"
+  },
+  {
+    "name": "config.technical-visit.queue.out",
+    "type": "java.lang.String",
+    "description": "A description for 'config.technical-visit.queue.out'"
   }
 ]}

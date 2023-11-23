@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 public class WebClientConfig<StockClient> {
-  @Value("${config.technicalVisit.url}")
+  @Value("${config.technical-visit.url}")
   private String technicalVisitUrl;
 
   @Bean
