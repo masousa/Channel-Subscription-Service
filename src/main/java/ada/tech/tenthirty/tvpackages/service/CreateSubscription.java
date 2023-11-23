@@ -1,23 +1,29 @@
 package ada.tech.tenthirty.tvpackages.service;
 
 import ada.tech.tenthirty.tvpackages.entity.Subscription;
+import ada.tech.tenthirty.tvpackages.entity.User;
 import ada.tech.tenthirty.tvpackages.queue.ScheduleTechnicalVisitProducer;
 import ada.tech.tenthirty.tvpackages.queue.payloads.ScheduleTechnicalVisitRequest;
 import ada.tech.tenthirty.tvpackages.repository.SubscriptionRepository;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
 public class CreateSubscription {
-
-  private final SubscriptionRepository repository;
-  private final ScheduleTechnicalVisitProducer technicalVisitQueue;
+  @Autowired
+  SubscriptionRepository repository;
+  @Autowired
+  ScheduleTechnicalVisitProducer technicalVisitQueue;
 
   public Subscription execute(Subscription subscriptionRequest){
+    User user = new User();
+    user.setTransactionId(subscriptionRequest.getTransactionId());
+    subscriptionRequest.setUser(user);
     ScheduleTechnicalVisit(subscriptionRequest.getUser().getTransactionId(), true);
     return repository.save(subscriptionRequest);
   }

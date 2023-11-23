@@ -28,5 +28,20 @@
     "name": "config.technical-visit.queue.out",
     "type": "java.lang.String",
     "description": "A description for 'config.technical-visit.queue.out'"
+  },
+  {
+    "name": "spring.jpa.autoconfigure.exclude",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.autoconfigure.exclude'"
+  },
+  {
+    "name": "spring.jpa.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.dialect'"
+  },
+  {
+    "name": "spring.jpa.hibernate.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.hibernate.dialect'"
   }
 ]}
