@@ -42,8 +42,13 @@
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>9.15.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-mysql</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springdoc</groupId>
@@ -90,6 +95,17 @@
 
 	<build>
 		<plugins>
+		 <plugin>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-maven-plugin</artifactId>
+            <version>9.16.3</version> <!-- Use a versão mais recente disponível -->
+            <configuration>
+                <url>jdbc:mysql://localhost:3306/</url>
+                <user>root</user>
+                <password>subscription</password>
+								<schemas>subscription</schemas>
+            </configuration>
+        </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -105,22 +121,19 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			 <plugin>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-maven-plugin</artifactId>
-            <version>4.10.0</version> 
-            <configuration>
-                <propertyFile>src/main/resources/application.yml</propertyFile>
-            </configuration>
-            <dependencies>
-                <dependency>
-                    <groupId>mysql</groupId>
-                    <artifactId>mysql-connector-java</artifactId>
-                    <version>8.0.23</version>
-                </dependency>
-            </dependencies>
-        </plugin>
 		</plugins>
 	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-core</artifactId>
+				<version>9.16.3</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
 
 </project>

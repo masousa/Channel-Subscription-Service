@@ -15,36 +15,40 @@ spring:
   autoconfigure:
     exclude:
       - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-  liquibase:
-    enabled: false
-##  --------
-
-# Enabling database connection
-datasource:
-  url: jdbc:postgresql://localhost:<port>/<db>
-  username: root
-  password: subscription
-  continue-on-error: true
-jpa:
-  open-in-view: false
-  show-sql: true
-  format-sql: true
-  hibernate:
-    ddl-auto: update
-  database-platform: org.hibernate.dialect.mysql
-  properties:
-    hibernate:
-      jdbc:
-        batch_size: 50
-
-## Enable liquidbase
-
-liquibase:
+      -
+  # Enabling database connection
+  datasource:
     url: jdbc:mysql://localhost:3306/subscription
-    user: root
+    username: root
     password: subscription
-    changeLogFile: classpath:db/changelog/changelog-local.xml
-
+    driver-class-name:  com.mysql.jdbc.Driver
+  jpa:
+    open-in-view: false
+    show-sql: true
+    format-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.mysql
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 50
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    url: jdbc:mysql://localhost:3306/subscription
+    username: root
+    password: subscription
+    driver-class-name:  com.mysql.jdbc.Driver
+    schemas: subscription
+    
+#config liquibase
+  # liquibase:
+  #   enabled: true
+  #   url: jdbc:mysql://localhost:3306/subscription
+  #   user: root
+  #   password: subscription
+  #   changeLogFile: classpath:db/changelog/changelog-local.xml
 
 ## Enabling rabbitmq
 
