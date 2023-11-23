@@ -41,25 +41,23 @@ spring:
     password: subscription
     driver-class-name:  com.mysql.jdbc.Driver
     schemas: subscription
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: subscription
+    password: subscription
+    cache:
+      connection:
+        mode: CONNECTION
+      channel:
+        size: 50
+      checkout-timeout: 10000
+  
+  config:
+    technicalVisit:
+      url: http://localhost:9081
+      queue:
+        out: shedule_technical_visit
     
-#config liquibase
-  # liquibase:
-  #   enabled: true
-  #   url: jdbc:mysql://localhost:3306/subscription
-  #   user: root
-  #   password: subscription
-  #   changeLogFile: classpath:db/changelog/changelog-local.xml
 
-## Enabling rabbitmq
-
-#  rabbitmq:
-#    host: 127.0.0.1
-#    port: 5672
-#    username: <username>
-#    password: <password>
-#    cache:
-#      connection:
-#        mode: CONNECTION
-#      channel:
-#        size: 50
-#      checkout-timeout: 10000

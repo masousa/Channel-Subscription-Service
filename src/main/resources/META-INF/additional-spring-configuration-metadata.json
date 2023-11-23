@@ -8,5 +8,15 @@
     "name": "spring.liquibase.changeLogFile",
     "type": "java.lang.String",
     "description": "A description for 'spring.liquibase.changeLogFile'"
+  },
+  {
+    "name": "spring.config.technicalVisit.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.config.technicalVisit.url'"
+  },
+  {
+    "name": "spring.config.technicalVisit.queue.out",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.config.technicalVisit.queue.out'"
   }
 ]}
