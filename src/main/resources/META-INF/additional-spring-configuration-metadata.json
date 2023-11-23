@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "liquibase.change-log",
+    "type": "java.lang.String",
+    "description": "A description for 'liquibase.change-log'"
+  },
+  {
+    "name": "spring.liquibase.changeLogFile",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.liquibase.changeLogFile'"
+  }
+]}

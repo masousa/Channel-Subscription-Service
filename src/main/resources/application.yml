@@ -21,7 +21,7 @@ spring:
     url: jdbc:mysql://localhost:3306/subscription
     username: root
     password: subscription
-
+    driver-class-name:  com.mysql.jdbc.Driver
   jpa:
     open-in-view: false
     show-sql: true
@@ -33,15 +33,22 @@ spring:
       hibernate:
         jdbc:
           batch_size: 50
-
-#config liquibase
-  liquibase:
+  flyway:
     enabled: true
-    change-log: classpath:db/changelog/changelog-local.xml
+    baseline-on-migrate: true
     url: jdbc:mysql://localhost:3306/subscription
-    user: root
+    username: root
     password: subscription
-    changeLogFile: classpath:db/changelog/changelog-local.xml
+    driver-class-name:  com.mysql.jdbc.Driver
+    schemas: subscription
+    
+#config liquibase
+  # liquibase:
+  #   enabled: true
+  #   url: jdbc:mysql://localhost:3306/subscription
+  #   user: root
+  #   password: subscription
+  #   changeLogFile: classpath:db/changelog/changelog-local.xml
 
 ## Enabling rabbitmq
 
