@@ -15,4 +15,3 @@ public class SubscriptionQueue{
         return new Queue(queueSubs, true);
     }
 }
-
