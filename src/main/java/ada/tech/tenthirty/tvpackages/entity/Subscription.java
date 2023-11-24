@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Table(name= "subscriptions")
 public class Subscription {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.UUID)
   private String id;
 
   @ManyToOne
