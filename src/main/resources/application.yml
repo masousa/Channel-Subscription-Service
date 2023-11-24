@@ -69,13 +69,15 @@ spring:
     checkout-timeout: 10000
 
 
+#Queue configuration
+config:
+  subscription-package:
+    url: http://localhost:9081
+
+    queue:
+      out: subscription-package
+
 
 #Queue configuration
-  config:
-    subscription-package:
-      url:9081
-
-    config:
-      subscription-package:
-        queue:
-          out:subscription_package
+#  config.subscription-package: url:9081
+#  config.subscription-package.queue.out: subscription-package
