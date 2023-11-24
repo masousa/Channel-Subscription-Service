@@ -16,8 +16,8 @@ public class NotifyInvoiceProducer {
     private final Queue queue;
     private final ObjectMapper objectMapper;
 
-    public void execute (NotifyInvoiceRequest SubscriptionPackage) throws JsonProcessingException {
-        String message = objectMapper.writeValueAsString(SubscriptionPackage);
+    public void execute (NotifyInvoiceRequest notifyInvoice) throws JsonProcessingException {
+        String message = objectMapper.writeValueAsString(notifyInvoice);
         rabbitTemplate.convertSendAndReceive(queue.getName(), message);
     }
 }
