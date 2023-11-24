@@ -1,12 +1,15 @@
 package ada.tech.tenthirty.tvpackages.service;
 
-import ada.tech.tenthirty.tvpackages.payloads.PaymentResponse;
-
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class HttpPayment {
@@ -16,25 +19,24 @@ public class HttpPayment {
     this.restTemplate = new RestTemplate();
   }
 
-  public PaymentResponse getPaymentStatus(String idUser) {
-  
-    String URL = UriComponentsBuilder.fromHttpUrl("http://localhost:3000")
-            .path("promotions/327f6164-8ac2-11ee-b9d1-0242ac120002")
+  public boolean getPaymentStatus(String idUser) {
+    String URL = UriComponentsBuilder.fromHttpUrl("http://localhost:3001")
+            .path("payment/"+ idUser)
             .toUriString();
 
     try {
-      ResponseEntity<PaymentResponse> response = restTemplate.getForEntity(URL, PaymentResponse.class);
-        System.out.println(response);
+      ResponseEntity<List<Map<String, String>>> response = restTemplate.exchange(
+              URL,
+              HttpMethod.GET,
+              null,
+              new ParameterizedTypeReference<List<Map<String, String>>>(){});
 
       if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
-        return response.getBody();
-      }else {
-        System.out.println("error");
+        return response.getBody().isEmpty();
       }
     } catch (ResponseStatusException ex) {
       throw new ResponseStatusException(ex.getStatusCode(), ex.getMessage());
     }
-
-    return null;
+    return false;
   }
 }

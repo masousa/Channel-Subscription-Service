@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(name = "/")
 @RequiredArgsConstructor
 public class SubscriptionController {
-    private final AddPackageSubscription addPackage;
+    private final AddPackageSubscription addPackageSubscription;
 
     @PostMapping
-    public Object addPacote(@RequestBody UpdateSubscriptionRequest updateSubscription){
-        return addPackage.execute(updateSubscription.getIdUser(), updateSubscription.getIdPackage());
+    public Object addNewPackage(@RequestBody UpdateSubscriptionRequest updateSubscription){
+        return addPackageSubscription.execute(updateSubscription.getIdUser(), updateSubscription.getIdPackage());
     }
 }
