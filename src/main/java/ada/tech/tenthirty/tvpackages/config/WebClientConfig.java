@@ -11,20 +11,12 @@ public class WebClientConfig<StockClient>  {
     @Value("${config.subscription-package.url}")
     private String subscriptionUrl;
 
+    @Value("${config.technical-visit.url}")
+    private String technicalVisitUrl;
+
     @Bean
     WebClient webClient(){
         return WebClient.builder().baseUrl(subscriptionUrl)
                 .build();
     }
-}
-
-public class WebClientConfig<StockClient> {
-  @Value("${config.technicalVisit.url}")
-  private String technicalVisitUrl;
-
-  @Bean
-  WebClient webClient(){
-    return WebClient.builder().baseUrl(technicalVisitUrl)
-            .build();
-  }
 }

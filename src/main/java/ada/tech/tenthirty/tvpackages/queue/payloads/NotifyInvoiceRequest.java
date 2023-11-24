@@ -9,5 +9,4 @@ public class NotifyInvoiceRequest {
     private String idUser;
     private LocalDateTime issueDate;
     private List<Package> listPackage;
-    //Lista com [{"skuid": "string";},{"skuid": "string";}]
 }
