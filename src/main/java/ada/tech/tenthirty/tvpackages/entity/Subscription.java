@@ -28,5 +28,6 @@ public class Subscription {
   @OneToMany(mappedBy = "subscription")
   private List<Package> listPackage;
 
+  @Enumerated(EnumType.STRING)
   private StatusSubscription statusSubscription;
 }
