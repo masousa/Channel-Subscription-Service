@@ -13,7 +13,7 @@ public class GetOpenInvoice {
     this.httpPayment = httpPayment;
   }
 
-  public PaymentResponse getOpenInvoice(String idPackage) {
-    return httpPayment.getPaymentStatus(idPackage);
+  public PaymentResponse getOpenInvoice(String idUser) {
+    return httpPayment.getPaymentStatus(idUser);
   }
 }

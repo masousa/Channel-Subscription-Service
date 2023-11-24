@@ -14,8 +14,8 @@ public class HttpPayment {
     this.restTemplate = new RestTemplate();
   }
 
-  public PaymentResponse getPaymentStatus(String idSubscription) {
-    String URL = "localhost:servicePayment/" + idSubscription;
+  public PaymentResponse getPaymentStatus(String idUser) {
+    String URL = "localhost:8080/pafamento" + idUser;
     try {
       ResponseEntity<PaymentResponse> response = restTemplate.getForEntity(URL, PaymentResponse.class);
 
