@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "liquibase.change-log",
+    "type": "java.lang.String",
+    "description": "A description for 'liquibase.change-log'"
+  },
+  {
+    "name": "spring.liquibase.changeLogFile",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.liquibase.changeLogFile'"
+  },
+  {
+    "name": "spring.config.subscription.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.config.subscription.url'"
+  },
+  {
+    "name": "spring.config.subscription.queue.out",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.config.subscription.queue.out'"
+  },
+  {
+    "name": "config.subscription-package.url",
+    "type": "java.lang.String",
+    "description": "A description for 'config.subscriptionPackage.url'"
+  },
+  {
+    "name": "config.subscription-package.queue.out",
+    "type": "java.lang.String",
+    "description": "A description for 'config.subscriptionPackage.queue.out'"
+  }
+]}
