@@ -11,32 +11,12 @@
       "description": "A description for 'spring.liquibase.changeLogFile'"
     },
     {
-      "name": "spring.config.technicalVisit.url",
-      "type": "java.lang.String",
-      "description": "A description for 'spring.config.technicalVisit.url'"
-    },
-    {
-      "name": "spring.config.technicalVisit.queue.out",
-      "type": "java.lang.String",
-      "description": "A description for 'spring.config.technicalVisit.queue.out'"
-    },
-    {
-      "name": "spring.config.subscription.url",
-      "type": "java.lang.String",
-      "description": "A description for 'spring.config.subscription.url'"
-    },
-    {
-      "name": "spring.config.subscription.queue.out",
+      "name": "spring.config.notify.queue.out",
       "type": "java.lang.String",
       "description": "A description for 'spring.config.subscription.queue.out'"
     },
     {
-      "name": "config.subscription-package.url",
-      "type": "java.lang.String",
-      "description": "A description for 'config.subscriptionPackage.url'"
-    },
-    {
-      "name": "config.subscription-package.queue.out",
+      "name": "config.notify.queue.out",
       "type": "java.lang.String",
       "description": "A description for 'config.subscriptionPackage.queue.out'"
     },

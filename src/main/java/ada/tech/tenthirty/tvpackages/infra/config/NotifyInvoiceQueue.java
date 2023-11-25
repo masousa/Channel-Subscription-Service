@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 @Configuration
 public class NotifyInvoiceQueue {
-    @Value("${config.notify-invoice.queue.out}")
+    @Value("config.notify.queue.out")
     private String queueSubs;
 
     @Bean

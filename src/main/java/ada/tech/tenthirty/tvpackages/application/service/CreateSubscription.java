@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -38,8 +39,8 @@ public class CreateSubscription {
         subscription.setUser(user);
         subscriptionRepository.save(subscription);
 
-        ScheduleTechnicalVisit(subscriptionRequest.getTransactionId(), true);
         NotifyInvoice(subscriptionRequest.getUserId(), subscription.getListPackage());
+        ScheduleTechnicalVisit(subscriptionRequest.getTransactionId(), true);
         return subscription;
     }
 
