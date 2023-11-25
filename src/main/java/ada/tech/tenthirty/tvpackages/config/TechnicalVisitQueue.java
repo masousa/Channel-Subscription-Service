@@ -6,13 +6,12 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Value;
 
 @Configuration
-public class SubscriptionQueue{
-    @Value("${config.subscription-package.queue.out}")
-    private String queueSubs;
+public class TechnicalVisitQueue {
+  @Value("${config.technical-visit.queue.out}")
+  private String queue;
 
-    @Bean
-    public Queue queue(){
-        return new Queue(queueSubs, true);
-    }
+  @Bean
+  public Queue queue(){
+    return new Queue(queue, true);
+  }
 }
-
