@@ -1,8 +1,8 @@
 package ada.tech.tenthirty.tvpackages.utils;
 
-import ada.tech.tenthirty.tvpackages.entity.Package;
-import ada.tech.tenthirty.tvpackages.payloads.PackageRequest;
-import ada.tech.tenthirty.tvpackages.payloads.response.PackageResponse;
+import ada.tech.tenthirty.tvpackages.domain.Package;
+import ada.tech.tenthirty.tvpackages.application.payloads.PackageRequest;
+import ada.tech.tenthirty.tvpackages.application.payloads.response.PackageResponse;
 
 import java.util.ArrayList;
 import java.util.List;

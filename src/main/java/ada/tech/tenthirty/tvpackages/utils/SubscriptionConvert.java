@@ -1,8 +1,8 @@
 package ada.tech.tenthirty.tvpackages.utils;
-import ada.tech.tenthirty.tvpackages.entity.StatusSubscription;
-import ada.tech.tenthirty.tvpackages.entity.Subscription;
-import ada.tech.tenthirty.tvpackages.payloads.SubscriptionRequest;
-import ada.tech.tenthirty.tvpackages.payloads.response.SubscriptionResponse;
+import ada.tech.tenthirty.tvpackages.domain.StatusSubscription;
+import ada.tech.tenthirty.tvpackages.domain.Subscription;
+import ada.tech.tenthirty.tvpackages.application.payloads.SubscriptionRequest;
+import ada.tech.tenthirty.tvpackages.application.payloads.response.SubscriptionResponse;
 
 public class SubscriptionConvert {
 
