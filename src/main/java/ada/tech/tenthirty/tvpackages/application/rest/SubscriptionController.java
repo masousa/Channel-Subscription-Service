@@ -5,6 +5,7 @@ import ada.tech.tenthirty.tvpackages.application.payloads.UpdateSubscriptionRequ
 import ada.tech.tenthirty.tvpackages.application.payloads.response.SubscriptionResponse;
 import ada.tech.tenthirty.tvpackages.application.service.AddPackageSubscription;
 import ada.tech.tenthirty.tvpackages.application.service.CreateSubscription;
+import ada.tech.tenthirty.tvpackages.infra.exception.BadRequestClient;
 import ada.tech.tenthirty.tvpackages.utils.SubscriptionConvert;
 import lombok.RequiredArgsConstructor;
 
@@ -31,7 +32,7 @@ public class SubscriptionController {
     }
 
     @PostMapping("/update")
-    public Object addNewPackage(@RequestBody UpdateSubscriptionRequest updateSubscription){
+    public Object addNewPackage(@RequestBody UpdateSubscriptionRequest updateSubscription) throws BadRequestClient {
         return addPackageSubscription.execute(
                 updateSubscription.getIdUser(), updateSubscription.getIdPackage()
         );

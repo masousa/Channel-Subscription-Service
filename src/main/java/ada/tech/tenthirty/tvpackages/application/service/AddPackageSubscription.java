@@ -1,26 +1,36 @@
 package ada.tech.tenthirty.tvpackages.application.service;
 
+import ada.tech.tenthirty.tvpackages.infra.exception.BadRequestClient;
 import ada.tech.tenthirty.tvpackages.domain.Package;
 import ada.tech.tenthirty.tvpackages.domain.StatusSubscription;
+import ada.tech.tenthirty.tvpackages.domain.Subscription;
+import ada.tech.tenthirty.tvpackages.infra.repository.SubscriptionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ada.tech.tenthirty.tvpackages.domain.Subscription;
 
 @Service
 @RequiredArgsConstructor
 public class AddPackageSubscription {
   private final GetOpenInvoice getOpenInvoice;
-  
-  public Object execute(String idUser, String idPackage) {
-    if(!getOpenInvoice.execute(idUser)) {
-      return "Você não pode adicionar novos pacote, existem faturas em aberto";
+  private final SubscriptionRepository subscriptionRepository;
+
+  public Subscription execute(String subscriptionId, String idPackage) throws BadRequestClient {
+    Subscription subscription = subscriptionRepository.findById(subscriptionId).get();
+
+    if (subscription == null) {
+      throw new BadRequestClient("subscription não encontrada");
     }
 
-   Package packageChannels = new Package();
+    if(!getOpenInvoice.execute(subscription.getUser().getId())) {
+      throw new BadRequestClient("Você não pode adicionar novos pacote, tem faturas em aberto");
+    }
+
+    Package packageChannels = new Package();
     packageChannels.setTransactionId(idPackage);
     packageChannels.setSubscription(subscription);
 
-    subscription.setTransactionId(subscriptionold);
+
+    subscription.setTransactionId(subscriptionId);
     subscription.getListPackage().add(packageChannels);
     subscription.setStatusSubscription(StatusSubscription.ACTIVE);
 
