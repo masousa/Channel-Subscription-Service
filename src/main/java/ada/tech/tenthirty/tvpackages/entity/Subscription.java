@@ -1,11 +1,9 @@
 package ada.tech.tenthirty.tvpackages.entity;
 
 import java.util.List;
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 
 
 @Data
@@ -28,5 +26,6 @@ public class Subscription {
   @OneToMany(mappedBy = "subscription")
   private List<Package> listPackage;
 
+  @Enumerated(EnumType.STRING)
   private StatusSubscription statusSubscription;
 }
