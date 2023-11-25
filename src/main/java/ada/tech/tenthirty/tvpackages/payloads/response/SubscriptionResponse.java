@@ -1,15 +1,14 @@
-package ada.tech.tenthirty.tvpackages.payloads;
+package ada.tech.tenthirty.tvpackages.payloads.response;
 
-
+import ada.tech.tenthirty.tvpackages.entity.Package;
 import ada.tech.tenthirty.tvpackages.entity.StatusSubscription;
 import lombok.Data;
+
 import java.util.List;
 
 @Data
-
-public class SubscriptionRequest {
+public class SubscriptionResponse {
     private String transactionId;
-    private String userId;
-    private List<PackageRequest> listPackage;
+    private List<PackageResponse> listPackage;
     private StatusSubscription statusSubscription;
 }
